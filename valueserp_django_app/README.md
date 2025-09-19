@@ -21,27 +21,44 @@ cd valueserp-django-app
 
 
 ### 2. Create a Virtual Environment & Install Dependencies
-```bash
-python3 -m venv venv
-source venv/bin/activate     # On Mac/Linux
-venv\Scripts\activate        # On Windows
+python -m venv venv
+# Activate the virtual environment
+# On Mac/Linux
+source venv/bin/activate
+# On Windows
+venv\Scripts\activate
 pip install -r requirements.txt
-
-
 
 
 ### 3. Set Environment Variables
 
-DJANGO_SECRET_KEY (optional, for local development you can skip or use a placeholder)
-
-You can also create a .env file in the project root:
+Create a .env file in the project root and add:
 
 DJANGO_SECRET_KEY=your-secret-key
 
+Note: For local development, you can use any placeholder secret key.
 
 
-###6. Open in Browser
+### 4. Apply Migrations
+python manage.py migrate
+
+
+### 5. Run the Development Server
+python manage.py runserver
+
+###  6. Open in Browser
 
 Go to: http://127.0.0.1:8000/
 
-Enter your ValueSERP API key and queries, then click Search.
+Enter your ValueSERP API key and queries.
+
+Click Search to see results.
+
+
+📥 Using the CSV Download Feature
+
+After performing a search, results are displayed in a table.
+
+Click the "Download CSV" button.
+
+A CSV file containing all search results will be downloaded to your local machine.
